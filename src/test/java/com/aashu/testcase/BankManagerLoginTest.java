@@ -29,7 +29,7 @@ public class BankManagerLoginTest extends TestBase{
 		
 		log.debug("Login Successsfully Executed");
 		
-		//Assert.fail("BankManagerLoginFailed");
+		Assert.fail("BankManagerLoginFailed");
 		}
 
 	
