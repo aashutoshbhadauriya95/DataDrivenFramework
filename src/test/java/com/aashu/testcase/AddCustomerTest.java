@@ -33,7 +33,7 @@ public class AddCustomerTest extends TestBase{
 		
 		Assert.assertTrue(driver.findElement(By.xpath(or.getProperty("toVerifyEntryInAddCustomer_xpath"))).isDisplayed());
 
-		//Assert.fail("AddCustomerTestFailed");
+		Assert.fail("AddCustomerTestFailed");
 		
 		log.debug("Sab ho gaya");
 		

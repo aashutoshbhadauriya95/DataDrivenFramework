@@ -14,6 +14,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import com.aashu.utilities.ExtentManager;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+
 public class TestBase {
 
 	/*
@@ -26,6 +30,9 @@ public class TestBase {
 	public static Properties config = new Properties();
 	public static Properties or = new Properties();
 	public static FileInputStream fis;
+	
+	public ExtentReports rep= ExtentManager.getInstance();
+	public static ExtentTest test;
 
 	public static Logger log = Logger.getLogger("devpinoyLogger");
 
