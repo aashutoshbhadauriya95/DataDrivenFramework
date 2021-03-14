@@ -7,17 +7,25 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 
+import com.aashu.base.TestBase;
 import com.aashu.utilities.TestUtil;
+import com.relevantcodes.extentreports.LogStatus;
 
-public class CustomeListeners implements ITestListener {
+public class CustomeListeners extends TestBase implements ITestListener {
 
 	public void onTestStart(ITestResult result) {
 		// TODO Auto-generated method stub
+		
+		test=rep.startTest(result.getName().toUpperCase());
 		
 	}
 
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stub
+		
+		test.log(LogStatus.PASS, result.getName().toUpperCase()+"Test Passed");
+		rep.endTest(test);
+		rep.flush();
 		
 	}
 
@@ -33,7 +41,9 @@ public class CustomeListeners implements ITestListener {
 			e.printStackTrace();
 		}
 		
+		test.log(LogStatus.FAIL, result.getName().toUpperCase()+"Test Failed with exception"+ result.getThrowable());
 		
+		test.log(LogStatus.FAIL, test.addScreenCapture(TestUtil.screenshotName));
 		
 		Reporter.log("Capturing Screenshot");
 		
@@ -44,6 +54,8 @@ public class CustomeListeners implements ITestListener {
 		
 		Reporter.log("<a target=\"_blank\" href="+TestUtil.screenshotName+"><img src="+TestUtil.screenshotName+" height=200 width=200></img></a>");
 	
+		rep.endTest(test);
+		rep.flush();
 		
 		
 		
