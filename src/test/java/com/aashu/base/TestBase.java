@@ -17,6 +17,8 @@ import org.testng.annotations.BeforeMethod;
 import com.aashu.utilities.ExtentManager;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
+import com.sun.org.apache.xpath.internal.operations.Or;
 
 public class TestBase {
 
@@ -89,6 +91,18 @@ public class TestBase {
 					TimeUnit.SECONDS);
 
 		}
+	}
+	
+	public void click(String locator)
+	{
+		driver.findElement(By.xpath(or.getProperty(locator))).click();
+		test.log(LogStatus.INFO	, "Clicking on"+locator);
+	}
+	
+	public void type(String locator,String value)
+	{
+		driver.findElement(By.xpath(or.getProperty(locator))).sendKeys(value);
+		test.log(LogStatus.INFO	, "Typing in"+locator+"entered value as"+value);
 	}
 
 	public boolean isElementPresent(By by) {

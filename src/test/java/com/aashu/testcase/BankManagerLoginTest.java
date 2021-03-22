@@ -21,7 +21,8 @@ public class BankManagerLoginTest extends TestBase{
 		
 		log.debug("Inside Login Test");
 		//driver.findElement(By.cssSelector(or.getProperty("bmlBtn_CSS"))).click();
-		driver.findElement(By.xpath(or.getProperty("bmlBtn_xPath"))).click();
+		//driver.findElement(By.xpath(or.getProperty("bmlBtn_xPath"))).click();
+		click("bmlBtn_xPath");
 		//Assert.assertTrue(isElementPresent(driver.findElement(By.cssSelector(or.getProperty("acBtn_CSS")))),"Login Not successful !!!");
 		Assert.assertTrue(isElementPresent(By.cssSelector(or.getProperty("acBtn_CSS"))),"Login Not successful !!!");
 		
