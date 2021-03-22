@@ -15,15 +15,23 @@ public class AddCustomerTest extends TestBase{
 		
 		log.debug("Inside Add Cust Login");
 		
-		driver.findElement(By.xpath(or.getProperty("bmlBtn_xPath"))).click();
+		//driver.findElement(By.xpath(or.getProperty("bmlBtn_xPath"))).click();
+		click("bmlBtn_xPath");
 		
-		driver.findElement(By.xpath(or.getProperty("addCustBtn_xPath"))).click();
+		//driver.findElement(By.xpath(or.getProperty("addCustBtn_xPath"))).click();
+		click("addCustBtn_xPath");
 		
-		driver.findElement(By.xpath(or.getProperty("firstName_xPath"))).sendKeys("Aashu");
-		driver.findElement(By.xpath(or.getProperty("lastName_xPath"))).sendKeys("Bhaiyya");
-		driver.findElement(By.xpath(or.getProperty("postCode_xPath"))).sendKeys("A2304");
+		//driver.findElement(By.xpath(or.getProperty("firstName_xPath"))).sendKeys("Aashu");
 		
-		driver.findElement(By.xpath(or.getProperty("toAddInSystemBtn_xPath"))).click();
+		type("firstName_xPath","Aashu");
+		//driver.findElement(By.xpath(or.getProperty("lastName_xPath"))).sendKeys("Bhaiyya");
+		type("lastName_xPath","Bhaiyya");
+		
+		//driver.findElement(By.xpath(or.getProperty("postCode_xPath"))).sendKeys("A2304");
+		type("postCode_xPath","A2304");
+		//driver.findElement(By.xpath(or.getProperty("toAddInSystemBtn_xPath"))).click();
+		click("toAddInSystemBtn_xPath");
+		
 		Thread.sleep(2000);
 		 driver.switchTo().alert().accept();
 		
@@ -42,3 +50,4 @@ public class AddCustomerTest extends TestBase{
 
 	
 }
+
