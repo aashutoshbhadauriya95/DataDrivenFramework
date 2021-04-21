@@ -15,8 +15,8 @@ public class AddCustomerTest extends TestBase{
 		
 		log.debug("Inside Add Cust Login");
 		
-		driver.findElement(By.xpath(or.getProperty("bmlBtn_xPath"))).click();
-		//click("bmlBtn_xPath");
+		//driver.findElement(By.xpath(or.getProperty("bmlBtn_xPath"))).click();
+		click("bmlBtn_xPath");
 		
 		//driver.findElement(By.xpath(or.getProperty("addCustBtn_xPath"))).click();
 		click("addCustBtn_xPath");
